@@ -1,26 +1,15 @@
 //const express = require("express");
 import express from "express";
+import path from "path";
+
 const app = express();
 
 app.get("/", (req, res) => {
-  const html = `
-  <!DOCTYPE>
-  <html>
-  <head>
-  <title>TODO</title>
-    </head>
-    <body>
-    <h1>TODO</h1>
-      <ul>
-        <li>Clean</li>
-        <li>Wash</li>
-        <li>Shopping</li>
+  //get the content of the file index.html and return to client/browser
+  const file = path.join(__dirname, "public", "index.html");
+  console.log(file);
 
-      </ul>
-    </body>
-  </html>
-  `;
-  res.send(html);
+  res.send("Hello Express!");
 });
 
 app.listen(3000, () => {
