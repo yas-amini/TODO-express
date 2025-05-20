@@ -2,13 +2,14 @@
 <html>
   <head>
     <title>TODO</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css" />
   </head>
   <body>
     <h1>TODO</h1>
     <ul>
-      <li>Clean</li>
-      <li>Wash</li>
-      <li>Shopping</li>
+      <% tasks.forEach(function(task){ %>
+      <li><%= task.name %></li>
+      <% }); %>
     </ul>
   </body>
 </html>
